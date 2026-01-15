@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unirse al Club - Night Runners Club Madrid</title>
+    <!-- CSS Global (compartido en todas las páginas) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- CSS específico para la página de membresía -->
+    <link rel="stylesheet" href="css/membership.css">
+</head>
+<body>
+    <!-- Header con márgenes amplios -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo y nombre a la izquierda -->
+            <div class="logo">
+                <img src="images/logo fondo negro.jpeg" alt="Logo Night Runners Club">
+                <span>NIGHT RUNNERS CLUB</span>
+            </div>
+            
+            <!-- Navegación a la derecha (solo visible en desktop) -->
+            <nav class="nav">
+                <a href="index.html">INICIO</a>
+                <a href="eventos.html">EVENTOS</a>
+                <a href="contacto.html">CONTACTO</a>
+                <a href="zona-miembros.html" class="active">ZONA MIEMBROS</a>
+                <a href="tienda.html">TIENDA</a>
+            </nav>
+            
+            <!-- Botón hamburguesa para móvil -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu-container">
+        <!-- Encabezado del menú móvil -->
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mobile-menu-logo">
+                <img src="images/logo fondo negro.jpeg" alt="Logo Night Runners Club">
+                <div class="mobile-menu-logo-text">
+                    <h2>NIGHT RUNNERS</h2>
+                    <p>CLUB</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navegación móvil -->
+        <nav class="mobile-nav">
+            <a href="index.html">
+                <i class="fas fa-home"></i>
+                INICIO
+            </a>
+            <a href="eventos.html">
+                <i class="fas fa-calendar-alt"></i>
+                EVENTOS
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i>
+                CONTACTO
+            </a>
+            <a href="zona-miembros.html" class="active">
+                <i class="fas fa-users"></i>
+                ZONA MIEMBROS
+            </a>
+            <a href="tienda.html">
+                <i class="fas fa-shopping-bag"></i>
+                TIENDA
+            </a>
+        </nav>
+        
+        <!-- Pie del menú móvil con redes sociales -->
+        <div class="mobile-menu-footer">
+            <p>Síguenos en redes sociales</p>
+            <div class="mobile-social-links">
+                <a href="https://chat.whatsapp.com/DKqRWwJZ2IY9t5AaDloYNF" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/night_runners.club" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@night_runners.club" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Formulario de Inscripción -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Zona miembros</h2>
+                <p class="form-subtitle">Únete a nuestro club</p>
+                
+                <!-- Contenedor para mensajes globales -->
+                <div id="error-container" style="display: none;"></div>
+                
+                <form id="membership-form">
+                    <!-- Campo oculto para redirección después del envío -->
+                    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            Nombre <span class="required">(obligatorio)</span>
+                        </label>
+                        <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+                        <div class="error-message" id="name-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">
+                            Número de teléfono <span class="required">(obligatorio)</span>
+                        </label>
+                        <div class="phone-input-container">
+                            <div class="country-code">
+                                ES <span>✓</span> +34
+                            </div>
+                            <input type="tel" id="phone" name="phone" class="form-input phone-input" required placeholder="600 000 000">
+                        </div>
+                        <div class="error-message" id="phone-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            Correo electrónico <span class="required">(obligatorio)</span>
+                        </label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="tucorreo@ejemplo.com">
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            ¿Eres mayor de edad? <span class="required">(obligatorio)</span>
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="age" value="si" required>
+                                Sí
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="age" value="no" required>
+                                No
+                            </label>
+                        </div>
+                        <div class="error-message" id="age-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            ¿Tienes coche/moto propio? <span class="required">(obligatorio)</span>
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="vehicle" value="si" required>
+                                Sí
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="vehicle" value="no" required>
+                                No
+                            </label>
+                        </div>
+                        <div class="error-message" id="vehicle-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments" class="form-label">¿Alguna pregunta o comentario?</label>
+                        <textarea id="comments" name="comments" class="form-textarea" placeholder="Escribe aquí tus preguntas o comentarios..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span id="submit-text">Enviar</span>
+                        <div class="loading-spinner" id="loading-spinner"></div>
+                    </button>
+                    
+                    <div class="legal-notice">
+                        <p><strong>Aviso legal:</strong> La veracidad de los datos proporcionados es responsabilidad exclusiva del solicitante. En caso de falsear la mayoría de edad, Night Runners Club queda exento de cualquier responsabilidad.</p>
+                    </div>
+                </form>
+                
+                <!-- Mensaje de éxito (oculto inicialmente) -->
+                <div id="success-message" class="form-success" style="display: none;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="#4CAF50" style="margin-bottom: 1rem;">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h3>¡Solicitud enviada con éxito!</h3>
+                    <p>Hemos recibido tu solicitud para unirte al Night Runners Club.</p>
+                    <p>Revisaremos tu información y te contactaremos en las próximas 48 horas.</p>
+                    <p>Mientras tanto, síguenos en Instagram para ver nuestras últimas rutas.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="NightRunnersClub.html" class="cta-button" style="margin-right: 1rem;">Volver al inicio</a>
+                        <a href="https://www.instagram.com/night_runners.club" target="_blank" class="instagram-button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Seguir en Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+<footer class="footer" id="contacto">
+    <div class="container">
+        <!-- Logo y título centrado -->
+        <div class="footer-header">
+            <div class="footer-logo-container">
+                <img src="images/logo fondo negro.jpeg" alt="Night Runners Club" class="footer-logo">
+                <h2 class="footer-title">NIGHT RUNNERS CLUB</h2>
+            </div>
+        </div>
+        
+        <!-- Descripción -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Descripción</h3>
+                <p>Comunidad de coches y motos apasionados por el motor, estilo y adrenalina en la capital.</p>
+                <p>Únete a nuestras quedadas y rutas exclusivas para vivir la emoción del motor en buena compañía.</p>
+            </div>
+            
+            <!-- Contacto -->
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <a href="mailto:nightrunners.club2025@gmail.com" class="footer-email">nightrunners.club2025@gmail.com</a>
+                <div class="social-links">
+                    <a href="https://chat.whatsapp.com/DKqRWwJZ2IY9t5AaDloYNF" target="_blank" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/night_runners.club" target="_blank" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@night.runners.club" target="_blank" aria-label="TikTok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                         <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <nav class="footer-nav">
+                    <a href="index.html">Inicio</a>
+                    <a href="eventos.html">Eventos</a>
+                    <a href="zona-miembros.html">Zona miembros</a>
+                    <a href="tienda.html">Tienda</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Night Runners Club Madrid. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+    <!-- JavaScript -->
+    <script src="js/membership-form.js"></script>
+</body>
+</html>
