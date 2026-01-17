@@ -33,11 +33,7 @@ body {
 }
 
 /* ============================================
-<<<<<<< HEAD
    HEADER & NAVIGATION - MARGENES AMPLIOS (40px)
-=======
-   HEADER & NAVIGATION - DISEÑO AMPLIADO
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
    ============================================ */
 
 .header {
@@ -131,10 +127,7 @@ body {
     background: none;
     border: none;
     padding: 5px;
-<<<<<<< HEAD
     z-index: 1001;
-=======
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
 }
 
 .hamburger span {
@@ -389,7 +382,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-<<<<<<< HEAD
 /* Logo y título centrado */
 .footer-header {
     display: flex;
@@ -401,23 +393,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-=======
-.footer .container {
-    max-width: 1200px;
-}
-
-/* Logo y título centrado */
-.footer-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 3.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
 .footer-logo-container {
     display: flex;
     flex-direction: column;
@@ -596,11 +571,7 @@ body {
 }
 
 /* ============================================
-<<<<<<< HEAD
    RESPONSIVE DESIGN - PARA PANTALLAS PEQUEÑAS
-=======
-   RESPONSIVE DESIGN
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
    ============================================ */
 
 @media (max-width: 992px) {
@@ -618,34 +589,13 @@ body {
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
     /* Mostrar hamburguesa y ocultar navegación desktop */
-=======
-    /* Header Mobile */
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
     .hamburger {
         display: flex;
     }
 
     .nav {
-<<<<<<< HEAD
         display: none;
-=======
-        position: fixed;
-        top: 80px;
-        right: -100%;
-        width: 80%;
-        max-width: 350px;
-        height: calc(100vh - 80px);
-        background-color: rgba(0, 0, 0, 0.98);
-        flex-direction: column;
-        padding: 3rem 2rem;
-        gap: 1.8rem;
-        transition: right 0.4s ease;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        justify-content: flex-start;
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
     }
 
     /* Ajustar márgenes del header en pantallas pequeñas */
@@ -654,7 +604,6 @@ body {
         max-width: 100%;
     }
 
-<<<<<<< HEAD
     /* Mostrar elementos del menú móvil */
     .mobile-menu-overlay {
         display: block;
@@ -685,29 +634,6 @@ body {
     }
 
     /* Footer para pantallas pequeñas */
-=======
-    .nav a {
-        font-size: 1.2rem;
-        padding: 0.8rem 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        width: 100%;
-    }
-    
-    .nav a:last-child {
-        border-bottom: none;
-    }
-    
-    .nav a::after {
-        display: none;
-    }
-    
-    .nav a:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-        padding-left: 1.5rem;
-    }
-
-    /* Footer Mobile */
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
     .footer {
         padding: 3rem 0 2rem;
     }
@@ -770,11 +696,7 @@ body {
 }
 
 @media (max-width: 480px) {
-<<<<<<< HEAD
     /* Ajustes para móviles muy pequeños */
-=======
-    /* Header Mobile Pequeño */
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
     .logo {
         font-size: 1.1rem;
     }
@@ -784,7 +706,6 @@ body {
         width: 50px;
     }
     
-<<<<<<< HEAD
     .mobile-nav a {
         font-size: 1.1rem;
         padding: 1rem 0;
@@ -792,16 +713,6 @@ body {
     
     .mobile-menu-container {
         width: 90%;
-=======
-    .nav {
-        top: 70px;
-        height: calc(100vh - 70px);
-        padding: 2rem 1.5rem;
-    }
-    
-    .nav a {
-        font-size: 1.1rem;
->>>>>>> 804648f433b4615afaaaffde7dc6da795e891b44
     }
     
     /* Footer Mobile Pequeño */
