@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unirse al Club - Night Runners Club Madrid</title>
-    <!-- CSS Global (compartido en todas las páginas) -->
     <link rel="stylesheet" href="css/global.css">
-    <!-- CSS específico para la página de membresía -->
     <link rel="stylesheet" href="css/membership.css">
-        <link rel="stylesheet" href="css/phone-input.css">
+    <link rel="stylesheet" href="css/phone-input.css">
+
     <script src="js/PhoneInput.js" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -128,8 +129,10 @@
                         </label>
 
                         <!-- Mantenemos el mismo contenedor pero con el PhoneInput dentro -->
-        
-                                <div id="phone-input-container" class="phone-input-wrapper"></div>
+
+                        <div id="phone-input-container" class="phone-input-wrapper"></div>
+
+                        <input type="hidden" id="full-phone-number" name="full-phone-number">
 
                         <div class="error-message" id="phone-error"></div>
                     </div>

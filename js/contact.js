@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let phoneInputInstance = null;
     const contactForm = document.getElementById('contactForm');
     
+    // AÑADIDO: Endpoint de Formspree para contacto
+    const FORMSPREE_ENDPOINT_CONTACTO = 'https://formspree.io/f/mykkelyv'; // REEMPLAZA con tu endpoint
+    
     // Inicializar PhoneInput si el contenedor existe
     const initPhoneInput = () => {
         const phoneContainer = document.getElementById('phone-input-container');
@@ -134,9 +137,73 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Manejo del envío del formulario
+    // AÑADIDO: Función para enviar a Formspree (igual que en membresía)
+    async function submitToFormspree(formData) {
+        try {
+            // Mostrar estado de carga
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>Enviando...</span>';
+                // Añadir spinner si no existe
+                if (!submitBtn.querySelector('.loading-spinner')) {
+                    const spinner = document.createElement('div');
+                    spinner.className = 'loading-spinner';
+                    spinner.style.cssText = 'display: inline-block; width: 20px; height: 20px; border: 3px solid #f3f3f3; border-top: 3px solid #1f6feb; border-radius: 50%; animation: spin 1s linear infinite; margin-left: 10px;';
+                    submitBtn.appendChild(spinner);
+                }
+            }
+            
+            // Preparar datos para Formspree
+            const phoneNumber = phoneInputInstance && typeof phoneInputInstance.getFullNumber === 'function' 
+                ? phoneInputInstance.getFullNumber() 
+                : '';
+            
+            const formspreeData = {
+                nombre: formData.nombre,
+                email: formData.email,
+                telefono: phoneNumber || 'No proporcionado',
+                mensaje: formData.mensaje,
+                _subject: `Nuevo mensaje de contacto - ${formData.nombre}`,
+                _replyto: formData.email
+            };
+            
+            // Enviar a Formspree
+            const response = await fetch(FORMSPREE_ENDPOINT_CONTACTO, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formspreeData)
+            });
+            
+            if (response.ok) {
+                showMessage('¡Gracias por contactarnos! Te responderemos lo antes posible.', 'success');
+                return true;
+            } else {
+                throw new Error('Error en la respuesta de Formspree');
+            }
+            
+        } catch (error) {
+            console.error('Error al enviar:', error);
+            showMessage('Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.', 'error');
+            return false;
+        } finally {
+            // Restaurar botón
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Enviar mensaje</span>';
+                const spinner = submitBtn.querySelector('.loading-spinner');
+                if (spinner) spinner.remove();
+            }
+        }
+    }
+    
+    // MODIFICADO: Manejo del envío del formulario
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        contactForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             
             // Validar formulario
@@ -147,13 +214,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 saveFullPhoneNumber();
             }
             
-            // Simulación de envío exitoso
-            showMessage('¡Gracias por contactarnos! Te responderemos lo antes posible.', 'success');
+            // Obtener datos del formulario
+            const formData = {
+                nombre: document.getElementById('nombre').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                mensaje: document.getElementById('mensaje').value.trim()
+            };
             
-            // Resetear formulario después de 1.5 segundos
-            setTimeout(() => {
-                resetForm();
-            }, 1500);
+            // Enviar a Formspree
+            const success = await submitToFormspree(formData);
+            
+            // Resetear formulario si fue exitoso
+            if (success) {
+                setTimeout(() => {
+                    resetForm();
+                }, 1500);
+            }
         });
     }
     
@@ -163,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (mapMarker) {
         mapMarker.addEventListener('click', function() {
-            showMessage('¡Estamos en Madrid! Punto de encuentro: Plaza Mayor. Próximo evento: Ruta de montaña este fin de semana.', 'info');
+            showMessage('¡Estamos en Madrid!', 'info');
         });
         
         // Efecto hover en el mapa
@@ -241,6 +317,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     opacity: 0;
                 }
             }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
         `;
         document.head.appendChild(style);
     };
@@ -248,7 +329,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Asegurar que los estilos CSS del PhoneInput estén presentes
     const ensurePhoneInputStyles = () => {
         // Los estilos deben estar en tu CSS principal
-        // Si necesitas añadirlos dinámicamente, puedes hacerlo aquí
     };
     
     // Inicializar todo
