@@ -52,8 +52,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 2300px; /* Más ancho que el resto */
-    padding: 0 40px; /* Márgenes más amplios (40px vs 20px del resto) */
+    max-width: 2300px;
+    /* Más ancho que el resto */
+    padding: 0 40px;
+    /* Márgenes más amplios (40px vs 20px del resto) */
     margin: 0 auto;
 }
 
@@ -341,7 +343,8 @@ body {
 .hero-section .container,
 .events-section .container {
     max-width: 1200px;
-    padding: 0 20px; /* Márgenes normales */
+    padding: 0 20px;
+    /* Márgenes normales */
     margin: 0 auto;
 }
 
@@ -553,6 +556,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -564,6 +568,7 @@ body {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -578,17 +583,18 @@ body {
     .footer-content {
         gap: 2.5rem;
     }
-    
+
     .footer-title {
         font-size: 1.5rem;
     }
-    
+
     .footer-section h3 {
         font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
+
     /* Mostrar hamburguesa y ocultar navegación desktop */
     .hamburger {
         display: flex;
@@ -637,58 +643,58 @@ body {
     .footer {
         padding: 3rem 0 2rem;
     }
-    
+
     .footer-header {
         margin-bottom: 2.5rem;
         padding-bottom: 1.5rem;
     }
-    
+
     .footer-logo {
         height: 70px;
         width: 70px;
     }
-    
+
     .footer-title {
         font-size: 1.4rem;
     }
-    
+
     .footer-subtitle {
         font-size: 0.85rem;
         letter-spacing: 1.5px;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    
+
     .footer-section h3 {
         font-size: 1.1rem;
         margin-bottom: 1rem;
     }
-    
+
     .footer-section p {
         font-size: 0.9rem;
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .footer-nav {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
     }
-    
+
     .footer-nav a {
         font-size: 0.85rem;
     }
-    
+
     .social-links {
         margin-top: 0.5rem;
     }
-    
+
     .footer-bottom {
         padding-top: 2rem;
         font-size: 0.8rem;
@@ -696,83 +702,84 @@ body {
 }
 
 @media (max-width: 480px) {
+
     /* Ajustes para móviles muy pequeños */
     .logo {
         font-size: 1.1rem;
     }
-    
+
     .logo img {
         height: 50px;
         width: 50px;
     }
-    
+
     .mobile-nav a {
         font-size: 1.1rem;
         padding: 1rem 0;
     }
-    
+
     .mobile-menu-container {
         width: 90%;
     }
-    
+
     /* Footer Mobile Pequeño */
     .footer {
         padding: 2.5rem 0 1.5rem;
     }
-    
+
     .footer-header {
         margin-bottom: 2rem;
         padding-bottom: 1rem;
     }
-    
+
     .footer-logo {
         height: 60px;
         width: 60px;
     }
-    
+
     .footer-title {
         font-size: 1.2rem;
     }
-    
+
     .footer-subtitle {
         font-size: 0.8rem;
         letter-spacing: 1px;
     }
-    
+
     .footer-content {
         gap: 2rem;
     }
-    
+
     .footer-section h3 {
         font-size: 1rem;
     }
-    
+
     .footer-section p {
         font-size: 0.85rem;
     }
-    
+
     .footer-nav {
         gap: 1.2rem;
     }
-    
+
     .footer-nav a {
         font-size: 0.8rem;
     }
-    
+
     .footer-email {
         font-size: 0.9rem;
     }
-    
+
     .social-links a {
         width: 34px;
         height: 34px;
     }
-    
+
     .footer-bottom {
         font-size: 0.75rem;
         padding-top: 1.5rem;
     }
-    
+
     .cta-button {
         padding: 0.875rem 2rem;
         font-size: 1rem;
@@ -784,10 +791,24 @@ body {
     .nav a {
         animation: slideIn 0.5s ease-out backwards;
     }
-    
-    .nav a:nth-child(1) { animation-delay: 0.1s; }
-    .nav a:nth-child(2) { animation-delay: 0.2s; }
-    .nav a:nth-child(3) { animation-delay: 0.3s; }
-    .nav a:nth-child(4) { animation-delay: 0.4s; }
-    .nav a:nth-child(5) { animation-delay: 0.5s; }
+
+    .nav a:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .nav a:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .nav a:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .nav a:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .nav a:nth-child(5) {
+        animation-delay: 0.5s;
+    }
 }

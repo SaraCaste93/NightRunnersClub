@@ -1,0 +1,124 @@
+/* phone-input.css */
+.phone-input-container {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.phone-input-container label {
+    display: block;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.phone-input-group {
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-darker);
+    transition: border-color 0.3s ease;
+}
+
+.phone-input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(220, 20, 60, 0.2);
+}
+
+.country-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 110px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.country-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.selected-prefix {
+    padding: 12px 15px;
+    color: var(--text-light);
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 70px;
+    text-align: center;
+    z-index: 1;
+}
+
+.phone-number {
+    flex: 1;
+    padding: 12px 15px;
+    background-color: transparent;
+    color: var(--text-light);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.phone-number::placeholder {
+    color: var(--text-gray);
+    opacity: 0.7;
+}
+
+/* Flecha del selector */
+.country-selector::after {
+    content: '▼';
+    position: absolute;
+    right: 20px;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Estilo para opciones del select (solo algunos navegadores) */
+.country-select option {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    padding: 10px;
+}
+
+/* Estados de validación */
+.phone-input-group.valid {
+    border-color: #4CAF50;
+}
+
+.phone-input-group.invalid {
+    border-color: #dc143c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .phone-input-group {
+        flex-direction: column;
+        border-radius: 8px;
+    }
+    
+    .country-selector {
+        min-width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .selected-prefix {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: left;
+        padding-left: 15px;
+    }
+    
+    .phone-number {
+        width: 100%;
+    }
+}

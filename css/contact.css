@@ -9,24 +9,106 @@
 }
 
 /* Hero Section */
+/* Estilos para la sección hero */
 .contact-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), 
-                url('https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover;
-    background-position: center;
-    padding: 4rem 0;
+    position: relative;
+    padding: 5rem 0;
+    /* Más padding vertical */
     text-align: center;
     margin-bottom: 4rem;
     border-bottom: 1px solid rgba(220, 20, 60, 0.3);
+    overflow: hidden;
+    min-height: 500px;
+    /* Más alto para ver más foto */
+
+    /* Quitar márgenes laterales para que sea más ancho */
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    /* Compensa los márgenes negativos */
+}
+
+/* Estilos para la imagen de fondo */
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    /* Detrás de todo */
+
+    /* Foto más brillante para verse mejor */
+    filter: brightness(0.9);
+}
+
+/* Degradado encima de la imagen */
+/* Degradado radial (oscuro en los bordes, claro en el centro) */
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0.432) 0%,
+            rgba(0, 0, 0, 0.719) 70%,
+            rgba(0, 0, 0, 0.87) 100%);
+    z-index: -1;
+}
+
+/* Estilos para el contenido */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 1200px;
+    /* Ancho máximo del contenido */
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Padding lateral para no pegarse a los bordes */
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    /* Un poco más grande */
     font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Sombra para mejor legibilidad */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Sombra sutil */
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contact-hero {
+        margin-left: -10px;
+        margin-right: -10px;
+        width: calc(100% + 20px);
+        padding: 3rem 0;
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
 }
 
 .hero-subtitle {
@@ -173,11 +255,15 @@
     font-size: 1rem;
 }
 
-/* Mapa */
+/* Mapa en sidebar */
+.map-container {
+    margin-top: 2rem;
+}
+
 .map-container h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
@@ -188,18 +274,25 @@
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    height: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    /* Más pequeño que antes (era 400px) */
     position: relative;
 }
 
+/* Imagen del mapa */
 #map {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                      url('https://images.unsplash.com/photo-1543788303-c15e49305bc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-static-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
 }
 
 .map-marker {
@@ -210,86 +303,109 @@
     z-index: 10;
     background-color: var(--primary-color);
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    /* Un poco más pequeño */
+    height: 40px;
+    /* Un poco más pequeño */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     animation: pulse 2s infinite;
     cursor: pointer;
 }
 
 @keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .map-marker i {
-    font-size: 24px;
+    font-size: 20px;
+    /* Un poco más pequeño */
 }
 
 .map-info {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 15px;
+    left: 15px;
     background-color: rgba(10, 10, 10, 0.9);
-    padding: 1.2rem;
-    border-radius: 8px;
-    max-width: 300px;
+    padding: 1rem;
+    border-radius: 6px;
+    max-width: 350px;
+    /* Más pequeño */
     z-index: 10;
-    border-left: 4px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
 }
 
 .map-info h4 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    /* Más pequeño */
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .map-info p {
     color: var(--text-gray);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    /* Más pequeño */
     margin-bottom: 0.3rem;
-    line-height: 1.5;
+    line-height: 1.4;
 }
+
+/* Si quieres una imagen de tu carpeta en lugar de Unsplash */
+.map-static-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
     .main-content {
         padding-top: 80px;
     }
-    
+
     .contact-hero {
         padding: 3rem 0;
         margin-bottom: 3rem;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .hero-text {
         font-size: 1rem;
     }
-    
+
     .contact-form-container,
     .description-box {
         padding: 1.5rem;
     }
-    
+
     .map-wrapper {
         height: 350px;
     }
-    
+
     .map-info {
         max-width: calc(100% - 40px);
     }
@@ -299,30 +415,30 @@
     .contact-hero {
         padding: 2.5rem 0;
     }
-    
+
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .contact-form-container,
     .description-box {
         padding: 1.2rem;
     }
-    
+
     .phone-input {
         flex-direction: column;
     }
-    
+
     .phone-input select {
         width: 100%;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 5px 5px 0 0;
     }
-    
+
     .phone-input input {
         border-radius: 0 0 5px 5px;
     }
