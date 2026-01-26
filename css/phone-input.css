@@ -31,7 +31,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    min-width: 110px;
+    min-width: 100px;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -46,15 +46,19 @@
     z-index: 2;
 }
 
-.selected-prefix {
-    padding: 12px 15px;
-    color: var(--text-light);
-    font-weight: 600;
-    background-color: rgba(0, 0, 0, 0.3);
+.selected-prefix-display {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    min-width: 70px;
-    text-align: center;
-    z-index: 1;
+    min-width: 55px;
+    justify-content: center;
+}
+
+.selected-prefix {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .phone-number {
@@ -101,6 +105,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .selected-prefix-display {
+        min-width: 70px;
+    }
+    
+    .selected-prefix {
+        font-size: 0.9rem;
+    }
+    
     .phone-input-group {
         flex-direction: column;
         border-radius: 8px;

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/phone-input.css">
-    <script src="js/PhoneInput.js" defer></script>
+    
 </head>
 
 <body>
@@ -26,8 +26,9 @@
                 <a href="index.html">INICIO</a>
                 <a href="https://calendar.google.com/calendar/u/4?cid=bm1naHRydWsUZXJzLmNsdWIyMDI1QgdtyWlLsLmVvbQ"
                     target="_blank">EVENTOS</a>
-                <a href="contacto.html" class="active">CONTACTO</a>
+                <a href="grupo.html">SOBRE NOSOTROS</a>
                 <a href="zona-miembros.html">ZONA MIEMBROS</a>
+                <a href="contacto.html" class="active">CONTACTO</a>
                 <a href="tienda.html">TIENDA</a>
             </nav>
 
@@ -57,7 +58,7 @@
             </div>
         </div>
 
-        <!-- Navegación móvil -->
+       <!-- Navegación móvil -->
         <nav class="mobile-nav">
             <a href="index.html">
                 <i class="fas fa-home"></i>
@@ -67,14 +68,19 @@
                 <i class="fas fa-calendar-alt"></i>
                 EVENTOS
             </a>
-            <a href="contacto.html" class="active">
-                <i class="fas fa-envelope"></i>
-                CONTACTO
+            <a href="grupo.html" class="active">
+                <i class="fas fa-users"></i>
+                SOBRE NOSOTROS
             </a>
             <a href="zona-miembros.html">
                 <i class="fas fa-users"></i>
                 ZONA MIEMBROS
             </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i>
+                CONTACTO
+            </a>
+
             <a href="tienda.html">
                 <i class="fas fa-shopping-bag"></i>
                 TIENDA
@@ -103,7 +109,7 @@
         <!-- Hero Section -->
         <section class="contact-hero">
             <!-- Imagen como elemento HTML -->
-            <img src="images/banner_inicio.png" alt="Night Runners Club Banner" class="hero-bg-image">
+            <img src="images/banner_nsx.png" alt="Night Runners Club Banner" class="hero-bg-image">
 
             <div class="hero-content">
                 <h1>CONTACTO</h1>
@@ -137,7 +143,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="telefono">Número de teléfono:</label>
+                                <label for="telefono">Número de teléfono*:</label>
                                 <div id="phone-input-container" class="phone-input-wrapper"></div>
                                 <!-- Campo oculto para el número completo -->
                                 <input type="hidden" id="full-phone-number" name="full-phone-number">
@@ -257,27 +263,29 @@
                     </div>
                 </div>
 
+                <!-- Enlaces rápidos -->
                 <div class="footer-section">
                     <h3>Enlaces</h3>
                     <nav class="footer-nav">
                         <a href="index.html">Inicio</a>
                         <a href="https://calendar.google.com/calendar/u/4?cid=bm1naHRydWsUZXJzLmNsdWIyMDI1QgdtyWlLsLmVvbQ"
                             target="_blank">Eventos</a>
-                        <a href="contacto.html">Contacto</a>
+                        <a href="grupo.html">Sobre Nosotros</a>
                         <a href="miembros.html">Zona miembros</a>
+                        <a href="contacto.html">Contacto</a>
                         <a href="tienda.html">Tienda</a>
                     </nav>
                 </div>
             </div>
+        </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Night Runners Club. Todos los derechos reservados.</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Night Runners Club. Todos los derechos reservados.</p>
+        </div>
         </div>
     </footer>
 
-    <script src="global.js"></script>
-    <script src="contact.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/contact.js"></script>
 </body>
-
 </html>

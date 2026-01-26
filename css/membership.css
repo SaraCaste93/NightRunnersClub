@@ -9,7 +9,7 @@
 .form-section {
     padding: 5rem 0;
     background-color: var(--bg-dark);
-    min-height: calc(100vh - 80px);
+    min-height: calc(115vh - 80px);
     display: flex;
     align-items: center;
     animation: fadeIn 0.8s ease-out;
