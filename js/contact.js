@@ -1,10 +1,7 @@
 // contact.js - Funcionalidad para la página de contacto
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar menú móvil desde global.js si existe
-    if (typeof initMobileMenu === 'function') {
-        initMobileMenu();
-    }
+
     
     // Variables globales
     let phoneInputInstance = null;

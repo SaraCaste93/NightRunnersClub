@@ -156,6 +156,7 @@ body {
    ELEMENTOS DEL MENÚ MÓVIL - OCULTOS POR DEFECTO
    ============================================ */
 
+/* DESPUÉS */
 .mobile-menu-overlay {
     display: none;
     position: fixed;
@@ -167,10 +168,12 @@ body {
     z-index: 999;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none; /* ← ESTO evita que bloquee clics cuando está cerrado */
 }
 
 .mobile-menu-overlay.active {
     opacity: 1;
+    pointer-events: all; /* ← Solo bloquea clics cuando está abierto */
 }
 
 .mobile-menu-container {

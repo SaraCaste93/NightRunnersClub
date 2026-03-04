@@ -135,13 +135,13 @@ Nueva solicitud de membresía recibida:
 
 📋 **Información del solicitante:**
 
-👤 **Nombre:** ${formData.name}
-📞 **Teléfono:** ${phoneNumber}
-📧 **Email:** ${formData.email}
-🎂 **Mayor de edad:** ${formData.age === 'si' ? 'Sí' : 'No'}
-🚗 **Vehículo propio:** ${formData.vehicle === 'si' ? 'Sí' : 'No'}
+**Nombre:** ${formData.name}
+**Teléfono:** ${phoneNumber}
+**Email:** ${formData.email}
+**Mayor de edad:** ${formData.age === 'si' ? 'Sí' : 'No'}
+**Vehículo propio:** ${formData.vehicle === 'si' ? 'Sí' : 'No'}
 
-💬 **Comentarios:** ${formData.comments || 'No hay comentarios'}
+**Comentarios:** ${formData.comments || 'No hay comentarios'}
 
 ---
 *Enviado desde el formulario de membresía - Night Runners Club Madrid*
