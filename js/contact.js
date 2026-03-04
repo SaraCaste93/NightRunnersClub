@@ -2,9 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar menú móvil desde global.js si existe
-    if (typeof initMobileMenu === 'function') {
         initMobileMenu();
-    }
+
     
     // Variables globales
     let phoneInputInstance = null;

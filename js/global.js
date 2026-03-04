@@ -1,7 +1,7 @@
 // global.js - Funcionalidad compartida para todas las páginas
 // Versión mejorada con debugging
 
-console.log('🔧 global.js cargado');
+console.log('global.js cargado');
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // También ejecutar si el DOM ya está cargado
 if (document.readyState === 'loading') {
-    console.log('⏳ Documento aún se está cargando...');
+    console.log('Documento aún se está cargando...');
 } else {
-    console.log('⚡ Documento ya cargado, ejecutando inmediatamente...');
+    console.log('Documento ya cargado, ejecutando inmediatamente...');
     initMobileMenu();
     initSharedFunctionality();
 }
 
 function initMobileMenu() {
-    console.log('📱 Inicializando menú móvil...');
+    console.log('Inicializando menú móvil...');
     
     // Obtener elementos del DOM
     const hamburger = document.querySelector('.hamburger');
@@ -31,16 +31,16 @@ function initMobileMenu() {
     
     // Validar que los elementos existan
     if (!hamburger) {
-        console.warn('⚠️ Botón hamburguesa no encontrado');
+        console.warn('Botón hamburguesa no encontrado');
         return;
     }
     
     if (!mobileMenuContainer) {
-        console.warn('⚠️ Contenedor del menú móvil no encontrado');
+        console.warn('Contenedor del menú móvil no encontrado');
         return;
     }
     
-    console.log('✓ Elementos encontrados:', {
+    console.log('Elementos encontrados:', {
         hamburger: !!hamburger,
         container: !!mobileMenuContainer,
         overlay: !!mobileMenuOverlay,
@@ -50,7 +50,7 @@ function initMobileMenu() {
     
     // Función para abrir/cerrar menú
     function toggleMenu() {
-        console.log('🔄 Alternando menú...');
+        console.log('Alternando menú...');
         hamburger.classList.toggle('active');
         mobileMenuContainer.classList.toggle('active');
         mobileMenuOverlay.classList.toggle('active');
@@ -58,16 +58,16 @@ function initMobileMenu() {
         // Prevenir scroll cuando el menú está abierto
         if (mobileMenuContainer.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
-            console.log('🔒 Scroll deshabilitado');
+            console.log('Scroll deshabilitado');
         } else {
             document.body.style.overflow = '';
-            console.log('🔓 Scroll habilitado');
+            console.log('Scroll habilitado');
         }
     }
     
     // Función para cerrar menú
     function closeMenu() {
-        console.log('❌ Cerrando menú...');
+        console.log('Cerrando menú...');
         hamburger.classList.remove('active');
         mobileMenuContainer.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
@@ -78,7 +78,7 @@ function initMobileMenu() {
     
     // 1. Click en hamburguesa
     hamburger.addEventListener('click', function(e) {
-        console.log('👆 Click en hamburguesa');
+        console.log('Click en hamburguesa');
         e.preventDefault();
         e.stopPropagation();
         toggleMenu();
@@ -87,7 +87,7 @@ function initMobileMenu() {
     // 2. Click en overlay
     if (mobileMenuOverlay) {
         mobileMenuOverlay.addEventListener('click', function(e) {
-            console.log('👆 Click en overlay');
+            console.log('Click en overlay');
             closeMenu();
         });
     }
@@ -95,7 +95,7 @@ function initMobileMenu() {
     // 3. Click en botón cerrar
     if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', function(e) {
-            console.log('👆 Click en botón cerrar');
+            console.log('Click en botón cerrar');
             e.preventDefault();
             e.stopPropagation();
             closeMenu();
@@ -105,7 +105,7 @@ function initMobileMenu() {
     // 4. Click en enlace del menú
     mobileNavLinks.forEach((link, index) => {
         link.addEventListener('click', function(e) {
-            console.log(`👆 Click en enlace ${index}: ${this.textContent.trim()}`);
+            console.log(`Click en enlace ${index}: ${this.textContent.trim()}`);
             
             // No cerrar si es un enlace externo
             const href = this.getAttribute('href');
@@ -120,7 +120,7 @@ function initMobileMenu() {
     // 5. Tecla ESC para cerrar menú
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && mobileMenuContainer.classList.contains('active')) {
-            console.log('⌨️ Tecla ESC presionada');
+            console.log('Tecla ESC presionada');
             closeMenu();
         }
     });
@@ -171,5 +171,5 @@ function initSharedFunctionality() {
         });
     });
     
-    console.log('✅ Funcionalidad compartida inicializada');
+    console.log('Funcionalidad compartida inicializada');
 }
