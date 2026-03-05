@@ -4,24 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Night Runners Club</title>
-    <!-- Vercel Web Analytics -->
+    <title>Eventos - Night Runners Club</title>
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/phone-input.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <script src="js/global.js"></script>
-    <script src="js/PhoneInput.js"></script>
-    <script src="js/contact.js"></script>
-    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/eventos.css">
 </head>
 
 <body>
+
 <!-- Header con márgenes amplios -->
 <header class="header">
     <div class="container">
@@ -34,10 +28,10 @@
         <!-- Navegación a la derecha (solo visible en desktop) -->
         <nav class="nav">
             <a href="index.html">INICIO</a>
-            <a href="eventos.html">EVENTOS</a>
+            <a href="eventos.html" class="active">EVENTOS</a>
             <a href="grupo.html">SOBRE NOSOTROS</a>
             <a href="zona-miembros.html">ZONA MIEMBROS</a>
-            <a href="contacto.html" class="active">CONTACTO</a>
+            <a href="contacto.html">CONTACTO</a>
             <a href="tienda.html">TIENDA</a>
         </nav>
 
@@ -68,9 +62,10 @@
 
         <!-- Navegación móvil -->
         <nav class="mobile-nav">
+            <a href="index.html">
                 INICIO
             </a>
-            <a href="eventos.html">
+            <a href="eventos.html" class="active">
                 EVENTOS
             </a>
             <a href="grupo.html">
@@ -82,7 +77,6 @@
             <a href="contacto.html">
                 CONTACTO
             </a>
-
             <a href="tienda.html">
                 TIENDA
             </a>
@@ -90,123 +84,105 @@
     </div>
 </header>
 
- <!-- Contenido principal con márgenes normales -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="contact-hero">
-            <!-- Imagen como elemento HTML -->
-            <img src="images/banner_nsx.png" alt="Night Runners Club Banner" class="hero-bg-image">
+    <!-- Hero -->
+    <section class="eventos-hero">
+        <div class="eventos-hero-bg"></div>
+        <div class="eventos-hero-content">
+            <h1>EVENTOS</h1>
+            <div class="hero-line"></div>
+            <p>Revive cada quedada, ruta y evento exclusivo de Night Runners Club Madrid.</p>
+        </div>
+    </section>
 
-            <div class="hero-content">
-                <h1>CONTACTO</h1>
-                <p>Estamos aquí para ayudarte 😊</p>
-                <p>¿Tienes alguna pregunta antes de unirte a nosotros?</p>
-                <p>¡No dudes en consultarnos lo que quieras con el siguiente formulario!
-                    Te responderemos lo antes posible.</p>
+    <div class="container">
+
+        <!-- Calendario -->
+        <section class="calendar-section">
+            <h2 class="section-title">Próximos <span>Eventos</span></h2>
+            <p class="section-subtitle">Consulta el calendario y no te pierdas ninguna cita</p>
+            <div class="calendar-wrapper">
+                <iframe
+                        src="https://calendar.google.com/calendar/embed?src=nightrunners.club2025%40gmail.com&ctz=Europe%2FMadrid&bgcolor=%23000000&color=%23dc143c"
+                        scrolling="no">
+                </iframe>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Formulario -->
-                    <div class="contact-form-container">
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="nombre">Nombre: <span class="required">(obligatorio)</span></label>
-                                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                            </div>
+        <!-- Álbumes de eventos -->
+        <section class="albumes-section">
+            <h2 class="section-title">Álbumes de <span>Fotos</span></h2>
+            <p class="section-subtitle">Revive cada momento de nuestros eventos</p>
 
-                            <div class="form-group">
-                                <label for="apellidos">Apellidos:</label>
-                                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos">
-                            </div>
+            <div class="eventos-grid">
 
-                            <div class="form-group">
-                                <label for="email">Email: <span class="required">(obligatorio)</span></label>
-                                <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="full-phone-number">Número de teléfono:</label>
-                                <div id="phone-input-container" class="phone-input-wrapper"></div>
-                                <!-- Campo oculto para el número completo -->
-                                <input type="hidden" id="full-phone-number" name="full-phone-number">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="mensaje">Cuéntanos en qué podemos ayudarte:
-                                    <span class="required">(obligatorio)</span>
-                                </label>
-                                <textarea id="mensaje" name="mensaje" rows="5" required
-                                    placeholder="Escribe tu mensaje aquí..."></textarea>
-                            </div>
-
-                            <button type="submit" class="cta-button" id="submit-contact-btn">
-                                <span id="submit-text">Enviar mensaje</span>
-                                <div class="loading-spinner" id="loading-spinner" style="display: none;"></div>
-                            </button>
-                            <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-gray);">
-                                Al enviar este formulario aceptas nuestra
-                                <a href="privacidad.html" target="_blank" style="color: var(--primary-color); text-decoration: underline;">Política de Privacidad</a>
-                            </p>
-
-                        </form>
-                    </div>
-
-                    <!-- Sidebar con Descripción y Mapa -->
-                    <div class="contact-sidebar">
-                        <!-- Descripción -->
-                        <div class="description-box">
-                            <h3>Descripción</h3>
-                            <p>Comunidad de coches y motos apasionados por el motor, estilo y estética en la
-                                capital.<br>
-                                Únete a nuestras ciudades y rutas exclusivas para vivir la emoción del motor en buena
-                                compañía.</p>
+                <!-- YOKFEST -->
+                <div class="evento-card">
+                    <div class="evento-card-image">
+                        <img src="images/yokfest.jpeg" alt="Yokfest 2026">
+                        <div class="evento-badge">Febrero 2026</div>
+                        <div class="evento-card-overlay">
+                            <a href="https://photos.app.goo.gl/sxTjk3bP2GSg2xbT6" target="_blank" class="overlay-btn">
+                                <i class="fas fa-images"></i> Ver fotos
+                            </a>
                         </div>
-
-                        <!-- Mapa -->
-                        <div class="map-container">
-                            <h3>Nuestra ubicación en Madrid</h3>
-                            <div class="map-wrapper">
-                                <div id="map">
-                                    <!-- Imagen de mapa estático -->
-                                    <img src="images/mapa_madrid.png" alt="Mapa de Madrid" class="map-static-image">
-                                    <div class="map-marker">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                </div>
-                                <div class="map-info">
-                                    <h4>Night Runners Club</h4>
-                                    <p>Punto de encuentro para apasionados del motor en la capital española.</p>
-                                    <p>Organizamos rutas y eventos exclusivos.</p>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="evento-card-body">
+                        <h3>YOKFEST</h3>
+                        <div class="evento-meta">
+                            <span class="evento-meta-item">
+                                <i class="fas fa-calendar"></i> 28 de Febrero, 2026
+                            </span>
+                            <span class="evento-meta-item">
+                                <i class="fas fa-map-marker-alt"></i> Discoteca Groove, Pinto (Madrid)
+                            </span>
+                            <span class="evento-meta-item">
+                                <i class="fas fa-clock"></i> 12:00 — 06:00h
+                            </span>
+                        </div>
+                        <p>Una noche épica en la Discoteca Groove con exposición de coches y motos, luxury cars, drift, car audio, premios, sorteos y espectáculos. Night party con invitados top.</p>
+                        <div class="evento-tags">
+                            <span class="evento-tag">Expo Car</span>
+                            <span class="evento-tag">Expo Moto</span>
+                            <span class="evento-tag">Luxury Cars</span>
+                            <span class="evento-tag">Drift</span>
+                            <span class="evento-tag">Night Party</span>
+                            <span class="evento-tag">Premios</span>
+                        </div>
+                        <div class="evento-links">
+                            <a href="https://photos.app.goo.gl/sxTjk3bP2GSg2xbT6" target="_blank" class="evento-link-btn btn-fotos">
+                                <i class="fas fa-images"></i> Ver álbum de fotos
+                            </a>
+                            <a href="https://www.instagram.com/night_runners.club" target="_blank" class="evento-link-btn btn-instagram">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- PLACEHOLDER próximo evento -->
+                <div class="evento-card evento-card--placeholder">
+                    <div class="evento-card-image evento-card-image--empty">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <div class="evento-card-body">
+                        <h3 class="placeholder-title">PRÓXIMO EVENTO</h3>
+                        <p>Pronto anunciaremos el siguiente evento. Síguenos en redes para no perderte nada.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- AÑADE ESTE SCRIPT PARA INICIALIZAR EL PHONE INPUT -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Verificar si PhoneInput está disponible
-                if (typeof PhoneInput !== 'undefined') {
-                    // Crear instancia del PhoneInput
-                    const phoneInput = new PhoneInput('phone-input-container', {
-                        showFlags: true,
-                        defaultCountry: 'ES',
-                        placeholder: 'Ej: 612 345 678',
-                        required: false // Opcional según tu formulario
-                    });
+        <!-- CTA -->
+        <div class="proximo-cta">
+            <h2>¿Quieres estar en el próximo evento?</h2>
+            <p>Únete a la comunidad y recibe todas las novedades antes que nadie</p>
+            <a href="zona-miembros.html" class="cta-button">Hazte miembro</a>
+            <a href="contacto.html" class="cta-button-outline">Contactar</a>
+        </div>
 
-                    console.log('PhoneInput inicializado correctamente');
-                }
-            });
-        </script>
-    </main>
+    </div>
+</main>
 
 <!-- Footer -->
 <footer class="footer" id="contacto">
@@ -261,7 +237,7 @@
                 <h3>Enlaces</h3>
                 <nav class="footer-nav">
                     <a href="index.html">Inicio</a>
-                        <a href="eventos.html">Eventos</a>
+                    <a href="eventos.html">Eventos</a>
                     <a href="grupo.html">Sobre Nosotros</a>
                     <a href="miembros.html">Zona miembros</a>
                     <a href="contacto.html">Contacto</a>

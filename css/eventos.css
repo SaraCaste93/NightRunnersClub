@@ -1,0 +1,419 @@
+/* ============================================
+   EVENTOS.CSS - Estilos específicos para la página de eventos
+   ============================================ */
+
+.main-content {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+/* ── HERO ── */
+.eventos-hero {
+    position: relative;
+    padding: 5rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid rgba(220, 20, 60, 0.3);
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eventos-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.75) 65%,
+    rgba(0, 0, 0, 0.92) 100%);
+    z-index: 1;
+}
+
+.eventos-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0008 50%, #0a0a0a 100%);
+    z-index: 0;
+}
+
+.eventos-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.eventos-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 40px rgba(220, 20, 60, 0.5);
+}
+
+.eventos-hero-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-line {
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 1.5rem auto;
+}
+
+/* ── SECCIONES ── */
+.calendar-section {
+    margin-bottom: 5rem;
+}
+
+.albumes-section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.section-title span {
+    color: var(--primary-color);
+}
+
+.section-subtitle {
+    color: var(--text-gray);
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+/* ── CALENDARIO ── */
+.calendar-wrapper {
+    background: #0a0a0a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.calendar-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+    border: none;
+    filter: invert(1) hue-rotate(180deg);
+    opacity: 0.9;
+}
+
+/* ── GRID DE EVENTOS ── */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+/* ── TARJETA DE EVENTO ── */
+.evento-card {
+    background: #0a0a0a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.evento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(220, 20, 60, 0.2);
+    border-color: rgba(220, 20, 60, 0.4);
+}
+
+.evento-card-image {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+}
+
+.evento-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.evento-card:hover .evento-card-image img {
+    transform: scale(1.05);
+}
+
+.evento-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.evento-card:hover .evento-card-overlay {
+    opacity: 1;
+}
+
+.overlay-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+.overlay-btn:hover {
+    background: #ff1744;
+}
+
+.evento-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.evento-card-body {
+    padding: 1.5rem;
+}
+
+.evento-card-body h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+    color: var(--text-light);
+}
+
+.evento-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.evento-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-gray);
+    font-size: 0.88rem;
+}
+
+.evento-meta-item i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.evento-card-body p {
+    color: var(--text-gray);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.evento-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.evento-tag {
+    background: rgba(220, 20, 60, 0.1);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    color: var(--primary-color);
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.evento-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.evento-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.btn-fotos {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-fotos:hover {
+    background: #ff1744;
+    transform: translateY(-1px);
+}
+
+.btn-instagram {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-instagram:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── CTA ── */
+.proximo-cta {
+    background: linear-gradient(135deg, #0d0003 0%, #1a0008 50%, #0d0003 100%);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.proximo-cta h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.proximo-cta p {
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.proximo-cta .cta-button {
+    margin: 0 0.5rem;
+}
+
+.cta-button-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--text-light);
+    padding: 1rem 3rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+}
+
+.cta-button-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ── PLACEHOLDER CARD ── */
+.evento-card--placeholder {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.evento-card-image--empty {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 260px;
+}
+
+.evento-card-image--empty i {
+    font-size: 4rem;
+    color: rgba(220, 20, 60, 0.3);
+}
+
+.placeholder-title {
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .eventos-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-wrapper iframe {
+        height: 400px;
+    }
+
+    .proximo-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button-outline,
+    .proximo-cta .cta-button {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        padding-top: 80px;
+    }
+}
