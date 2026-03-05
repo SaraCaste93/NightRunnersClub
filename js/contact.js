@@ -1,7 +1,6 @@
 // contact.js - Funcionalidad para la página de contacto
 
 document.addEventListener('DOMContentLoaded', function() {
-
     
     // Variables globales
     let phoneInputInstance = null;
