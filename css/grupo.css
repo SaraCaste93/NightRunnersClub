@@ -15,12 +15,11 @@
 /* ===== Hero Section ===== */
 .grupo-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.733), rgb(0, 0, 0)),
-        url('../images/bannerCoche.png') center 1%/cover no-repeat;
+    url('../images/bannerCoche.png') center 1%/cover no-repeat;
     color: var(--text-light);
     padding: 250px 0 100px;
     text-align: center;
     margin-top: 10px;
-    /* Para compensar el header fijo */
     margin-bottom: 40px;
     position: relative;
 }
@@ -167,6 +166,20 @@
     font-size: 1.4rem;
 }
 
+.legal-notice {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-left: 3px solid rgba(220, 20, 60, 0.5);
+}
+
+.legal-notice p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
 /* ===== Sección Beneficios ===== */
 .beneficios-section {
     margin-bottom: 80px;
@@ -247,6 +260,241 @@
     font-weight: 300;
 }
 
+/* ══════════════════════════════════════════
+   CLUBS COLABORADORES
+   ══════════════════════════════════════════ */
+
+.clubs-section {
+    margin-bottom: 4rem;
+}
+
+.clubs-header {
+    margin-bottom: 2.5rem;
+}
+
+.clubs-header .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.clubs-header .section-title span {
+    color: var(--primary-color);
+}
+
+.clubs-header .section-subtitle {
+    color: var(--text-gray);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.club-card {
+    background: #0a0a0a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.club-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(220, 20, 60, 0.2);
+    border-color: rgba(220, 20, 60, 0.4);
+}
+
+.club-card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #111 0%, #1a0008 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.club-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.club-card:hover .club-card-image img {
+    transform: scale(1.05);
+}
+
+.club-logo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(220, 20, 60, 0.1);
+    border: 2px solid rgba(220, 20, 60, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.club-card:hover .club-logo-placeholder {
+    background: rgba(220, 20, 60, 0.2);
+    border-color: rgba(220, 20, 60, 0.6);
+}
+
+.club-logo-placeholder--empty {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: transparent;
+}
+
+.club-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.club-card:hover .club-card-overlay {
+    opacity: 1;
+}
+
+.overlay-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+.overlay-btn:hover {
+    background: #ff1744;
+}
+
+.club-card-body {
+    padding: 1.5rem;
+}
+
+.club-card-body h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.4rem;
+    color: var(--text-light);
+}
+
+.club-tagline {
+    font-size: 0.88rem;
+    color: var(--primary-color);
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.club-card-body p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.club-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.club-tag {
+    background: rgba(220, 20, 60, 0.1);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    color: var(--primary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.club-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.club-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.club-link-btn.btn-instagram {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.club-link-btn.btn-instagram:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.club-link-btn.btn-contacto {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.club-link-btn.btn-contacto:hover {
+    background: #ff1744;
+}
+
+.club-card--placeholder {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.club-card--placeholder .placeholder-title {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.club-card--placeholder p {
+    color: rgba(255, 255, 255, 0.2) !important;
+}
+
 /* ===== Sección Colaboradores ===== */
 .colaboradores-section {
     margin-bottom: 80px;
@@ -293,16 +541,63 @@
 }
 
 .colaborador-logo {
-    width: 70px;
-    height: 70px;
-    background: var(--primary-color);
-    border-radius: 8px;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    min-height: 90px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.25);
+    overflow: hidden;
+    padding: 15px;
+    position: relative;
+    flex-shrink: 0;
     color: var(--text-light);
     font-size: 1.8rem;
-    box-shadow: 0 4px 10px rgba(220, 20, 60, 0.3);
+}
+
+.colaborador-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.colaborador-card:hover .colaborador-logo img {
+    transform: scale(1.08);
+}
+
+.colaborador-logo.techa-security {
+    background: white;
+    border: 2px solid var(--primary-color);
+    padding: 12px;
+}
+
+.colaborador-logo.diamond-detailing {
+    background: white;
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+}
+
+.colaborador-logo.bordered {
+    border: 2px solid white;
+    background: transparent;
+}
+
+.colaborador-logo.invert-colors img {
+    filter: brightness(0) invert(1);
+}
+
+.colaborador-logo.wide-logo {
+    padding: 12px 18px;
+}
+
+.colaborador-logo.tall-logo {
+    padding: 18px 12px;
 }
 
 .colaborador-info h3 {
@@ -353,6 +648,8 @@
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 10px rgba(220, 20, 60, 0.3);
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .colaborador-link:hover {
@@ -389,145 +686,6 @@
 .colaborador-lista li i {
     color: var(--primary-color);
     font-size: 1rem;
-}
-
-/* ===== AJUSTES ESPECÍFICOS PARA LOGOS ===== */
-
-/* Contenedor principal del logo - Asegurar tamaño consistente */
-.colaborador-logo {
-    width: 90px;
-    height: 90px;
-    min-width: 90px;
-    min-height: 90px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary-color);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.25);
-    overflow: hidden;
-    padding: 15px;
-    position: relative;
-    flex-shrink: 0;
-}
-
-/* Imagen del logo - Mantener proporciones */
-.colaborador-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-/* Efecto hover en el logo */
-.colaborador-card:hover .colaborador-logo img {
-    transform: scale(1.08);
-}
-
-/* ===== LOGO TECHAUTO SECURITY ===== */
-.colaborador-logo.techa-security {
-    background: white;
-    border: 2px solid var(--primary-color);
-    padding: 12px;
-}
-
-/* Para logos con fondo oscuro en imagen blanca */
-.colaborador-logo.techa-security img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-}
-
-/* ===== LOGO DIAMOND DETAILING ===== */
-.colaborador-logo.diamond-detailing {
-    background: white;
-    border: 2px solid var(--primary-color);
-    padding: 10px;
-}
-
-.colaborador-logo.diamond-detailing img {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-}
-
-/* ===== VARIANTES ADICIONALES PARA LOGOS ===== */
-
-/* Logo con borde blanco para fondos oscuros */
-.colaborador-logo.bordered {
-    border: 2px solid white;
-    background: transparent;
-}
-
-/* Para logos oscuros sobre fondo rojo (invertir colores) */
-.colaborador-logo.invert-colors img {
-    filter: brightness(0) invert(1);
-}
-
-/* Para logos muy anchos */
-.colaborador-logo.wide-logo {
-    padding: 12px 18px;
-}
-
-.colaborador-logo.wide-logo img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-}
-
-/* Para logos muy altos */
-.colaborador-logo.tall-logo {
-    padding: 18px 12px;
-}
-
-.colaborador-logo.tall-logo img {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-}
-
-/* ===== RESPONSIVE PARA LOGOS ===== */
-@media (max-width: 768px) {
-    .colaborador-logo {
-        width: 80px;
-        height: 80px;
-        min-width: 80px;
-        min-height: 80px;
-        padding: 12px;
-    }
-
-    .colaborador-logo.techa-security,
-    .colaborador-logo.diamond-detailing {
-        padding: 10px;
-    }
-
-    .colaborador-logo.techa-security img,
-    .colaborador-logo.diamond-detailing img {
-        width: 85%;
-        height: 85%;
-    }
-}
-
-@media (max-width: 576px) {
-    .colaborador-logo {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
-        min-height: 70px;
-        padding: 10px;
-    }
-
-    .colaborador-logo.techa-security,
-    .colaborador-logo.diamond-detailing {
-        padding: 8px;
-    }
-
-    .colaborador-logo.techa-security img,
-    .colaborador-logo.diamond-detailing img {
-        width: 80%;
-        height: 80%;
-    }
 }
 
 /* ===== Tarjeta de Promoción ===== */
@@ -672,195 +830,15 @@
 
 /* ===== Animaciones ===== */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .grupo-hero {
-        padding: 100px 0 60px;
-        margin-top: 70px;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-        padding: 0 15px;
-    }
-
-    .descripcion-card {
-        padding: 25px 20px;
-    }
-
-    .descripcion-card h2 {
-        font-size: 1.8rem;
-    }
-
-    .descripcion-card .lead {
-        font-size: 1rem;
-    }
-
-    .whatsapp-card {
-        padding: 30px 20px;
-    }
-
-    .whatsapp-title {
-        font-size: 1.5rem;
-    }
-
-    .whatsapp-btn {
-        padding: 12px 25px;
-        font-size: 0.95rem;
-    }
-
-    .beneficios-header h2 {
-        font-size: 1.8rem;
-    }
-
-    .beneficios-header h3 {
-        font-size: 1.3rem;
-    }
-
-    .beneficios-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .beneficio-card {
-        padding: 25px 20px;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .colaborador-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .colaborador-card {
-        padding: 25px 20px;
-    }
-
-    .promocion-card {
-        padding: 30px 20px;
-    }
-
-    .promocion-header h3 {
-        font-size: 1.5rem;
-    }
-
-    .promocion-header h4 {
-        font-size: 1.1rem;
-    }
-
-    .cta-card {
-        padding: 40px 20px;
-    }
-
-    .cta-card h2 {
-        font-size: 1.8rem;
-    }
-
-    .cta-card p {
-        font-size: 1rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .cta-btn {
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .grupo-hero {
-        padding: 90px 0 50px;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 0.9rem;
-    }
-
-    .descripcion-card h2 {
-        font-size: 1.6rem;
-    }
-
-    .whatsapp-title {
-        font-size: 1.3rem;
-    }
-
-    .beneficios-header h2 {
-        font-size: 1.6rem;
-    }
-
-    .beneficios-header h3 {
-        font-size: 1.1rem;
-    }
-
-    .beneficio-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.4rem;
-    }
-
-    .beneficio-card h4 {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-    }
-
-    .colaborador-info h3 {
-        font-size: 1.3rem;
-    }
-
-    .colaborador-info h4 {
-        font-size: 1rem;
-    }
-
-    .cta-card h2 {
-        font-size: 1.6rem;
-    }
-}
-
-/* Efecto de entrada para las tarjetas */
 .descripcion-card,
 .whatsapp-card,
 .beneficio-card,
@@ -870,34 +848,80 @@
     animation: fadeIn 0.6s ease-out backwards;
 }
 
-.beneficio-card:nth-child(1) {
-    animation-delay: 0.1s;
+.beneficio-card:nth-child(1) { animation-delay: 0.1s; }
+.beneficio-card:nth-child(2) { animation-delay: 0.2s; }
+.beneficio-card:nth-child(3) { animation-delay: 0.3s; }
+.beneficio-card:nth-child(4) { animation-delay: 0.4s; }
+.colaborador-card:nth-child(1) { animation-delay: 0.1s; }
+.colaborador-card:nth-child(2) { animation-delay: 0.2s; }
+.promocion-card { animation-delay: 0.3s; }
+.colaborador-card:nth-child(3) { animation-delay: 0.4s; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .grupo-hero {
+        padding: 100px 0 60px;
+        margin-top: 70px;
+    }
+
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1rem; padding: 0 15px; }
+
+    .descripcion-card { padding: 25px 20px; }
+    .descripcion-card h2 { font-size: 1.8rem; }
+    .descripcion-card .lead { font-size: 1rem; }
+
+    .whatsapp-card { padding: 30px 20px; }
+    .whatsapp-title { font-size: 1.5rem; }
+    .whatsapp-btn { padding: 12px 25px; font-size: 0.95rem; }
+
+    .beneficios-header h2 { font-size: 1.8rem; }
+    .beneficios-header h3 { font-size: 1.3rem; }
+    .beneficios-grid { grid-template-columns: 1fr; gap: 20px; }
+    .beneficio-card { padding: 25px 20px; }
+
+    .clubs-grid { grid-template-columns: 1fr; }
+    .clubs-header .section-title { font-size: 1.5rem; }
+
+    .section-title { font-size: 1.8rem; }
+
+    .colaborador-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .colaborador-card { padding: 25px 20px; }
+    .colaborador-logo {
+        width: 80px; height: 80px;
+        min-width: 80px; min-height: 80px;
+        padding: 12px;
+    }
+
+    .promocion-card { padding: 30px 20px; }
+    .promocion-header h3 { font-size: 1.5rem; }
+    .promocion-header h4 { font-size: 1.1rem; }
+
+    .cta-card { padding: 40px 20px; }
+    .cta-card h2 { font-size: 1.8rem; }
+    .cta-card p { font-size: 1rem; }
+    .cta-buttons { flex-direction: column; align-items: center; gap: 15px; }
+    .cta-btn { width: 100%; max-width: 300px; padding: 12px 25px; }
 }
 
-.beneficio-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.beneficio-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.beneficio-card:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.colaborador-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.colaborador-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.promocion-card {
-    animation-delay: 0.3s;
-}
-
-.colaborador-card:nth-child(3) {
-    animation-delay: 0.4s;
+@media (max-width: 480px) {
+    .grupo-hero { padding: 90px 0 50px; }
+    .hero-title { font-size: 1.8rem; }
+    .hero-subtitle { font-size: 0.9rem; }
+    .descripcion-card h2 { font-size: 1.6rem; }
+    .whatsapp-title { font-size: 1.3rem; }
+    .beneficios-header h2 { font-size: 1.6rem; }
+    .beneficios-header h3 { font-size: 1.1rem; }
+    .beneficio-icon { width: 60px; height: 60px; font-size: 1.4rem; }
+    .beneficio-card h4 { font-size: 1.1rem; }
+    .section-title { font-size: 1.6rem; }
+    .colaborador-info h3 { font-size: 1.3rem; }
+    .colaborador-info h4 { font-size: 1rem; }
+    .colaborador-logo { width: 70px; height: 70px; min-width: 70px; min-height: 70px; padding: 10px; }
+    .cta-card h2 { font-size: 1.6rem; }
 }
